@@ -3,7 +3,7 @@
 
 	<head>
 	
-		<title>Registro material informatico</title>
+		<title>Registro Cursos</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/main.css">
 		<script src="../js/main.js"></script>
@@ -226,9 +226,25 @@
 
 		<div class="container text-center py-5">
 		
-			<h1 class="display-2 py-2">Registro material informatico</h1>
+			<h1 class="display-2 py-2">Registro de Cursos</h1>
 		
 		</div>
+
+		<form id="frm1">
+
+			<div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+				
+				<div class="input-group flex-nowrap w-25 mx-auto" style="padding-left: 105px">
+  					<span class="input-group-text">Curso</span>
+ 					<input type="text" id="nombre">
+ 					<input class="btn btn-outline-dark" type="button" value="Buscar" onclick="ConsultaFecha()">
+				</div>
+
+				<input class="btn btn-outline-dark" type="button" value="Reinciar filtros" onclick="MostrarTabla()">
+
+			</div>
+
+		</form>
 
 		<br>
 
