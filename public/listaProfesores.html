@@ -179,7 +179,17 @@
 				
 			}
 
+			document.getElementById("Agregar").addEventListener("submit", function(event) {
+                event.preventDefault(); 
+                $('#modalExito').modal('show');
+            });
+            document.getElementById("cerrarModal").addEventListener("", function() {
+                window.location.reload();
+            });
+
 		</script>
+
+		<script src="../js/bootstrap.min.js"></script>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #dedede;">
 	<div class="container-fluid">
@@ -232,7 +242,7 @@
 
 		<form id="frm1">
 
-			<div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+			<div class=" d-grid gap-2 d-md-flex justify-content-md-end" id="Agregar">
 				
 				<div class="input-group flex-nowrap w-25 mx-auto" style="padding-left: 60px">
   					<span class="input-group-text">Profesor</span>
@@ -240,8 +250,48 @@
  					<input class="btn btn-outline-dark" type="button" value="Buscar" onclick="ConsultaFecha()">
 				</div>
 
-				<input class="btn btn-outline-dark" type="button" value="Agregar Profesor" onclick="AgregarProfesor()">
+				<!-- Button trigger modal -->
+				<button type="submit" class="btn btn-primary" onclick="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:left">
+					Agregar Profesor
+				</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<h1 class="modal-title fs-5" id="staticBackdropLabel">Datos del Profesor</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+						asdf
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" id="cerrarModal">Cerrar</button>
+						<button type="submit" class="btn btn-primary">Agregar</button>
+						</div>
+					</div>
+					</div>
+				</div>
 
+			</div>
+
+			<button type="submit" class="btn btn-outline-dark mt-2">Enviar</button>
+			
+			<div class="modal fade" id="modalExito" tabindex="-1" role="dialog" aria-labelledby="modalExitoLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalExitoLabel">Éxito</h5>
+						</div>
+						<div class="modal-body">
+							Prestamo grabado con éxito.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success" id="cerrarModal">Cerrar</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</form>
@@ -262,8 +312,10 @@
 		    	</tbody>
 		</div>
 
-		<script src="../js/bootstrap.min.js"></script>
+		
 
+
+		
 	</body>
 
 </html>
